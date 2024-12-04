@@ -1,15 +1,15 @@
 import {
-  AdditionalPersonalInfo,
-  CompanyName,
-  ContactInfo,
-  ContactItem,
-  Footer,
-  FullName,
-  Header,
-  Main,
-  PersonalInfo,
-  Profession,
-  Wrapper,
+    CompanyName,
+    ContactInfo,
+    ContactItem,
+    Footer,
+    FullName,
+    Header,
+    Main,
+    MoreInfoButton,
+    PersonalInfo,
+    Profession,
+    Wrapper
 } from "./DigitalCard.style";
 
 export type DigitalCardProps = {
@@ -18,7 +18,7 @@ export type DigitalCardProps = {
   profession: string;
   additionalInfo?: string;
   contact: Array<string>;
-  moreInfoButton: string;
+  moreInfoButton: Array<string>;
   websiteURL: string;
 };
 
@@ -38,28 +38,31 @@ export function DigitalCard(props: DigitalCardProps) {
       <Header>
         <CompanyName>{companyName}</CompanyName>
       </Header>
+
       <Main>
+      
         <PersonalInfo>
           <FullName>{fullName}</FullName>
           <Profession>{profession}</Profession>
-          <AdditionalPersonalInfo>{additionalInfo}</AdditionalPersonalInfo>
+          <Profession>{additionalInfo}</Profession>
         </PersonalInfo>
-        {/*  <PersonalInfo>
-          <FullName>{fullName}</FullName>
-          <Profession>{profession}</Profession>
-          <AdditionalInfo>{AdditionalInfo}</AdditionalInfo>
-        </PersonalInfo>
-        */}
+
         <ContactInfo>
           {contact.map((item) => (
             <ContactItem>{item}</ContactItem>
           ))}
         </ContactInfo>
-        {/*<MoreInfoButton>
-          {moreInfoButton}
-        </MoreInfoButton>*/}
+
+        <MoreInfoButton>
+          {moreInfoButton[0]}
+          <br/>
+          {moreInfoButton[1]}
+        </MoreInfoButton>
+
       </Main>
+
       <Footer>{websiteURL}</Footer>
+
     </Wrapper>
   );
 }

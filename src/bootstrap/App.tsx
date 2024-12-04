@@ -6,19 +6,20 @@ import { DigitalCard } from './DigitalCard/DigitalCard';
 
 export const App = () => {
 
-  
-  const contacts = ['whatsapp','call','email','web' ];
 
-  return (
-    <Wrapper>
-      <DigitalCard  
-      companyName='graphix planet'
-      fullName='rebeeh parammal'
-      profession='graphic designer'
-      contact={contacts}
-      moreInfoButton='click here'
-      websiteURL='https://www.graphixplanet.com'
-      />
-    </Wrapper>
-  );
+    const contacts = ['whatsapp', 'call', 'email', 'web'];
+    const moreInfoButton = ["click here", "for more information"];
+    return (
+        <Wrapper>
+            <DigitalCard
+                companyName='graphix planet'
+                fullName='rebeeh parammal'
+                profession='graphic designer'
+                additionalInfo='digital artist'
+                contact={contacts}
+                moreInfoButton={moreInfoButton}
+                websiteURL='https://www.graphixplanet.com'
+            />
+        </Wrapper>
+    );
 };
